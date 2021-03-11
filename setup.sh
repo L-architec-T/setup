@@ -1,6 +1,6 @@
 #!/bin/bash
 ############################################################
-#Script Auto-Setup By LarchitecT
+# Script Auto-Setup By LarchitecT
 ############################################################
 # shellcheck disable=SC2006
 # shellcheck disable=SC2034
