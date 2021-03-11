@@ -1,4 +1,7 @@
 #!/bin/bash
+############################################################
+#Script Auto-Setup By LarchitecT
+############################################################
 # shellcheck disable=SC2006
 # shellcheck disable=SC2034
 red=`tput setaf 1`
