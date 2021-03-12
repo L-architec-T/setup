@@ -12,6 +12,16 @@ magenta=`tput setaf 5`
 cyan=`tput setaf 6`
 white=`tput setaf 7`
 reset=`tput sgr0`
+echo "
+   _____      __                    ______            ____
+  / ___/___  / /___  ______        / ____/___  ____  / __/
+  \__ \/ _ \/ __/ / / / __ \______/ /   / __ \/ __ \/ /_
+ ___/ /  __/ /_/ /_/ / /_/ /_____/ /___/ /_/ / / / / __/
+/____/\___/\__/\__,_/ .___/      \____/\____/_/ /_/_/
+                   /_/
+                                            By LarchitecT
+
+"
 ############################################################
 # core functions
 ############################################################
@@ -177,7 +187,17 @@ mysql -uroot -p$PASSWDDB -e "QUIT"
 /etc/init.d/mysql stop
 /etc/init.d/mysql start
 
-echo "Voici vos accès PhpMyAdmin
+echo "
+   _____      __                    ______            ____
+  / ___/___  / /___  ______        / ____/___  ____  / __/
+  \__ \/ _ \/ __/ / / / __ \______/ /   / __ \/ __ \/ /_
+ ___/ /  __/ /_/ /_/ / /_/ /_____/ /___/ /_/ / / / / __/
+/____/\___/\__/\__,_/ .___/      \____/\____/_/ /_/_/
+                   /_/
+                                            By LarchitecT
+
+―――――――――――――――――――――――――――――――――――――――――――
+Voici vos accès PhpMyAdmin
 ―――――――――――――――――――――――――――――――――――――――――――
 PhpMyAdmin : http://$MYIP:9000
 ―――――――――――――――――――――――――――――――――――――――――――
@@ -306,7 +326,7 @@ function restart_mysql {
 
 function fix_locale {
 localectl set-locale fr_FR.UTF-8
-print_info "[ langue FR ] initialisé avec succès !"
+print_info "[ language FR ] initialisé avec succès !"
 }
 ############################################################
 # apt_clean
