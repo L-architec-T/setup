@@ -20,7 +20,7 @@ echo "
 /____/\___/\__/\__,_/ .___/      \____/\____/_/ /_/_/
                    /_/
                                             By LarchitecT
-
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 "
 ############################################################
 # core functions
@@ -66,7 +66,7 @@ ____  ___         ________  _______________   ____
 /___/\  \         /_______  /_______  /   \___/
       \_/                 \/        \/          By LarchitecT
 
-
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 '  > /etc/motd
 print_info "[ motd ] installé avec succès !"
 }
@@ -196,23 +196,33 @@ echo "
                    /_/
                                             By LarchitecT
 
-―――――――――――――――――――――――――――――――――――――――――――
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 Voici vos accès PhpMyAdmin
 ―――――――――――――――――――――――――――――――――――――――――――
 PhpMyAdmin : http://$MYIP:9000
 ―――――――――――――――――――――――――――――――――――――――――――
 Username   : $MAINDB
 Password   : $PASSWDDB
-―――――――――――――――――――――――――――――――――――――――――――
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 "  > /root/PhpMyAdmin_Accès.txt
-echo "Voici ci-dessous vos accès PhpMyAdmin"
+echo "
+  _____      __                    ______            ____
+  / ___/___  / /___  ______        / ____/___  ____  / __/
+  \__ \/ _ \/ __/ / / / __ \______/ /   / __ \/ __ \/ /_
+ ___/ /  __/ /_/ /_/ / /_/ /_____/ /___/ /_/ / / / / __/
+/____/\___/\__/\__,_/ .___/      \____/\____/_/ /_/_/
+                   /_/
+                                            By LarchitecT
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Voici ci-dessous vos accès PhpMyAdmin"
 echo "―――――――――――――――――――――――――――――――――――――――――――"
 echo "${magenta}PhpMyAdmin${reset} : ${green}http://$MYIP:9000${reset}"
 echo "${magenta}Username${reset}   : ${green}${MAINDB}${reset}"
 echo "${magenta}Password${reset}   : ${green}${PASSWDDB}${reset}"
 echo "―――――――――――――――――――――――――――――――――――――――――――"
 echo "${magenta}NOTE${reset}: ${green}Vos accès ont été enregistré dans${reset} ${blue}./root/PhpMyAdmin_Accès.txt${reset}"
-echo "―――――――――――――――――――――――――――――――――――――――――――"
+echo "――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
 echo "${magenta}Redémarrez votre serveur pour initialiser le language FR en effectuant la commande : ${reset}${blue}reboot${reset}"
 }
 ############################################################
