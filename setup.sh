@@ -63,6 +63,12 @@ print_info "[ motd ] installé avec succès !"
 ############################################################
 # Install build-essential
 ############################################################
+function install_dos2unix {
+    sudo apt-get install dos2unix
+}
+############################################################
+# Install build-essential
+############################################################
 function install_build {
     check_install build-essential nodejs
 }
@@ -160,9 +166,10 @@ MAINDB=${HOSTNAME//[^a-zA-Z0-9]/_}
 
 mysqladmin -u root password "$PASSWDDB"
 # shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB! -e "CREATE DATABASE $MAINDB"
+mysql -uroot -p$PASSWDDB -e "CREATE DATABASE $MAINDB"
 # shellcheck disable=SC2086
 mysql -uroot -p$PASSWDDB -e "GRANT ALL PRIVILEGES ON $MAINDB.* TO $MAINDB@localhost IDENTIFIED BY '$PASSWDDB'"
+
 echo "Voici vos accès PhpMyAdmin
 ―――――――――――――――――――――――――――――――――――――――――――
 PhpMyAdmin : http://$MYIP:9000
@@ -189,6 +196,26 @@ function install_apache_home {
     unzip index.zip -d /var/www/html
     rm index.zip
     print_info "[ apache2 ] installé avec succès !"
+}
+############################################################
+# Install Sudo
+############################################################
+function install_sudo {
+    apt install sudo
+    print_info "[ sudo ] installé avec succès !"
+}
+############################################################
+# Install Mongoose
+############################################################
+function install_mongoose {
+    sudo apt-get install gnupg
+    wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+    echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | sudo tee
+    /etc/apt/sources.list.d/mongodb-org-4.4.list
+    sudo apt-get update
+    sudo apt-get install -y mongodb-org
+    sudo systemctl start mongod
+    print_info "[ mongoose ] installé avec succès !"
 }
 ############################################################
 # Install Php
@@ -282,14 +309,17 @@ function update_upgrade {
 function update {
     apt-get -q -y update
 }
-########################################################################
+############################################################
 # START OF PROGRAM
-########################################################################
+############################################################
 case "$1" in
 *)
     #update_upgrade
     update
     install_home
+    install_sudo
+    install_dos2unix
+    install_mongoose
     install_build
     install_node
     install_pm2
