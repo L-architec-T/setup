@@ -162,13 +162,20 @@ function install_pm2 {
 function create_mariadb_user {
 PASSWDDB="$(openssl rand -base64 12)"
 MYIP=`hostname -I | awk '{print $1}'`
-MAINDB=${HOSTNAME//[^a-zA-Z0-9]/_}
+MAINDB="${HOSTNAME//[^a-zA-Z0-9]/_}_user"
 
 mysqladmin -u root password "$PASSWDDB"
 # shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB -e "CREATE DATABASE $MAINDB"
+mysql -uroot -p$PASSWDDB -e "CREATE USER $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
 # shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB -e "GRANT ALL PRIVILEGES ON $MAINDB.* TO $MAINDB@localhost IDENTIFIED BY '$PASSWDDB'"
+mysql -uroot -p$PASSWDDB -e "GRANT ALL PRIVILEGES ON $MAINDB.* TO $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
+# shellcheck disable=SC2086
+mysql -uroot -p$PASSWDDB -e "FLUSH PRIVILEGES;"
+# shellcheck disable=SC2086
+mysql -uroot -p$PASSWDDB -e "QUIT"
+
+/etc/init.d/mysql stop
+/etc/init.d/mysql start
 
 echo "Voici vos accès PhpMyAdmin
 ―――――――――――――――――――――――――――――――――――――――――――
@@ -186,6 +193,7 @@ echo "${magenta}Password${reset}   : ${green}${PASSWDDB}${reset}"
 echo "―――――――――――――――――――――――――――――――――――――――――――"
 echo "${magenta}NOTE${reset}: ${green}Vos accès ont été enregistré dans${reset} ${blue}./root/PhpMyAdmin_Accès.txt${reset}"
 echo "―――――――――――――――――――――――――――――――――――――――――――"
+echo "${magenta}Redémarrez votre serveur pour initialiser le language FR en effectuant la commande : ${reset}${blue}reboot${reset}"
 }
 ############################################################
 # Install Apache_home
@@ -278,15 +286,27 @@ function restart_apache {
     print_info "[ apache2 ] redemarré avec succès !"
 }
 ############################################################
+# Restart MySql
+############################################################
+function restart_mysql {
+    sudo service mysql restart
+    print_info "[ mysql ] redemarré avec succès !"
+}
+############################################################
 # Fix locale language
 ############################################################
+#function fix_locale {
+#    cp /etc/locale.gen /etc/locale.gen.old
+#    sed -i "s/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/g" /etc/locale.gen
+    #sed -i "s/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/g" /etc/locale.gen
+    #sed -i "s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g" /etc/locale.gen
+#    /usr/sbin/locale-gen
+#    export LANG=fr_FR.UTF-8
+#}
+
 function fix_locale {
-    cp /etc/locale.gen /etc/locale.gen.old
-    sed -i "s/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/g" /etc/locale.gen
-    sed -i "s/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/g" /etc/locale.gen
-    sed -i "s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g" /etc/locale.gen
-    /usr/sbin/locale-gen
-    export LANG=fr_FR.UTF-8
+localectl set-locale fr_FR.UTF-8
+print_info "[ langue FR ] initialisé avec succès !"
 }
 ############################################################
 # apt_clean
@@ -336,6 +356,7 @@ case "$1" in
     install_mysql
     install_php
     install_phpmyadmin
+    restart_mysql
     restart_apache
     fix_locale
     create_mariadb_user
