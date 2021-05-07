@@ -1,17 +1,21 @@
 #!/bin/bash
+
+if [ "$(whoami)" != 'root' ]
+  then
+    echo "Veuillez executer en root !!"
+    exit
+fi
 ############################################################
 # Script Auto-Setup By LarchitecT
 ############################################################
-# shellcheck disable=SC2006
-# shellcheck disable=SC2034
-red=`tput setaf 1`
-green=`tput setaf 2`
-yellow=`tput setaf 3`
-blue=`tput setaf 4`
-magenta=`tput setaf 5`
-cyan=`tput setaf 6`
-white=`tput setaf 7`
-reset=`tput sgr0`
+red="$(tput setaf 1)"
+green="$(tput setaf 2)"
+yellow="$(tput setaf 3)"
+blue="$(tput setaf 4)"
+magenta="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+white="$(tput setaf 7)"
+reset="$(tput sgr0)"
 echo "
    _____      __                    ______            ____
   / ___/___  / /___  ______        / ____/___  ____  / __/
@@ -26,7 +30,7 @@ echo "
 # core functions
 ############################################################
 function check_install {
-    if [ -z "`which "$1" 2>/dev/null`" ]
+    if [ -z "$(which "$1" 2>/dev/null)" ]
     then
         executable=$1
         shift
@@ -115,9 +119,7 @@ function install_gtop {
 #############################################################
 function install_bashtop {
     git clone https://github.com/aristocratos/bashtop.git
-    # shellcheck disable=SC2164
     cd bashtop/
-    # shellcheck disable=SC2164
     cd DEB
     sudo ./build
     print_info "[ bashtop ] installé avec succès !"
@@ -183,20 +185,16 @@ function install_pm2 {
 ############################################################
 function create_mariadb_user {
 PASSWDDB="$(openssl rand -base64 12)"
-MYIP=`hostname -I | awk '{print $1}'`
+MYIP="$(hostname -I | awk '{print $1}')"
 MAINDB="${HOSTNAME//[^a-zA-Z0-9]/_}"
 
 mysqladmin -u root password "$PASSWDDB"
-# shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB -e "CREATE DATABASE ${MAINDB} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
-# shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB -e "CREATE USER $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
-# shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB -e "GRANT ALL PRIVILEGES ON $MAINDB.* TO $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
-# shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB -e "FLUSH PRIVILEGES;"
-# shellcheck disable=SC2086
-mysql -uroot -p$PASSWDDB -e "QUIT"
+
+mysql -uroot -p"$PASSWDDB" -e "CREATE DATABASE ${MAINDB} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
+mysql -uroot -p"$PASSWDDB" -e "CREATE USER $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
+mysql -uroot -p"$PASSWDDB" -e "GRANT ALL PRIVILEGES ON $MAINDB.* TO $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
+mysql -uroot -p"$PASSWDDB" -e "FLUSH PRIVILEGES;"
+mysql -uroot -p"$PASSWDDB" -e "QUIT"
 
 /etc/init.d/mysql stop
 /etc/init.d/mysql start
@@ -237,7 +235,6 @@ echo "${magenta}Password${reset}   : ${green}${PASSWDDB}${reset}"
 echo "―――――――――――――――――――――――――――――――――――――――――――"
 echo "${magenta}NOTE${reset}: ${green}Vos accès ont été enregistré dans${reset} ${blue}./root/PhpMyAdmin_Accès.txt${reset}"
 echo "――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
-#echo "${magenta}Redémarrez votre serveur pour initialiser le language FR en effectuant la commande : ${reset}${blue}reboot${reset}"
 }
 ############################################################
 # Install Apache_home
