@@ -21,7 +21,7 @@
     <a href="https://github.com/L-architec-T/setup/issues">Request Feature</a>
 </h3>
 
-## Getting Started
+## ⚙️ Getting Started
 
 1. Mise à jour : `apt update`
 2. Install Git : `apt install git`
