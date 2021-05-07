@@ -29,7 +29,7 @@
 
 ## 🛠 Instructions d'installation
 
-IMPORTANT : Vous devez exécuter le script en utilisateur `root` !
+**IMPORTANT** : Vous devez exécuter le script en utilisateur `root` !
 Les permissions `root` sont nécessaire pour créer & installer `PhpMyAdmin`.
 
 1. Installation: `bash setup.sh`
