@@ -105,7 +105,7 @@ function install_node {
     curl -sL https://deb.nodesource.com/setup_14.x | bash -
     check_install nodejs nodejs
     check_install npm npm
-    print_info "[ node & npm ] installé avec succès !"
+    print_info "[ node ] installé avec succès !"
 }
 ############################################################
 # Install Curl
