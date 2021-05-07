@@ -237,7 +237,7 @@ echo "${magenta}Password${reset}   : ${green}${PASSWDDB}${reset}"
 echo "―――――――――――――――――――――――――――――――――――――――――――"
 echo "${magenta}NOTE${reset}: ${green}Vos accès ont été enregistré dans${reset} ${blue}./root/PhpMyAdmin_Accès.txt${reset}"
 echo "――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
-echo "${magenta}Redémarrez votre serveur pour initialiser le language FR en effectuant la commande : ${reset}${blue}reboot${reset}"
+#echo "${magenta}Redémarrez votre serveur pour initialiser le language FR en effectuant la commande : ${reset}${blue}reboot${reset}"
 }
 ############################################################
 # Install Apache_home
