@@ -36,7 +36,9 @@ function check_install {
             apt-get clean
             print_info "[ $1 ] installé avec succès !"
             shift
-        done
+         done
+    else
+        apt --fix-broken install
     fi
 }
 ############################################################
@@ -52,9 +54,6 @@ function print_warn {
     echo -n "$1"
     echo -e '\e[0m'
 }
-############################################################
-sudo chmod 777 setup.sh
-print_info "[ chmod 777 ] accordé avec succès !"
 ############################################################
 # Install Home
 ############################################################
@@ -153,7 +152,6 @@ function install_speedtest {
     echo "deb https://ookla.bintray.com/debian generic main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
     sudo apt-get update
     check_install speedtest speedtest
-    print_info "[ speedtest ] installé avec succès !"
 }
 ############################################################
 # install_mariadb_server
@@ -362,6 +360,7 @@ function update_upgrade {
     apt-get -q -y update
     apt-get -q -y upgrade
     apt-get -q -y autoremove
+    apt --fix-broken install
 }
 ############################################################
 # update
@@ -378,6 +377,8 @@ case "$1" in
     update
     install_home
     install_sudo
+    install_curl
+    install_unzip
     install_dos2unix
     install_mongoose
     install_build
@@ -386,8 +387,6 @@ case "$1" in
     install_gtop
     install_bashtop
     install_git
-    install_curl
-    install_unzip
     install_ffmpeg
     install_speedtest
     install_apache
