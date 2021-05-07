@@ -81,6 +81,13 @@ function install_dos2unix {
     sudo apt-get install dos2unix
 }
 ############################################################
+# Install proxy_http
+############################################################
+function install_proxy_http {
+    a2enmod proxy proxy_http
+    print_info "[ proxy_http ] installé avec succès !"
+}
+############################################################
 # Install build-essential
 ############################################################
 function install_build {
@@ -386,6 +393,7 @@ case "$1" in
     install_git
     install_ffmpeg
     install_speedtest
+    install_proxy_http
     install_apache
     install_apache_home
     install_mariadb_server
