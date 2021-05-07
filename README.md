@@ -1,6 +1,5 @@
 <h2 align="center">
   Auto Setup<br/>
-  <a href="https://larchitect.cf/" target="_blank">larchitect.cf</a>
 </h2>
 
 <br/>
