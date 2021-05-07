@@ -28,8 +28,8 @@ Clone ce référentiel : `git clone https://github.com/L-architec-T/setup`
 
 ## 🛠 Instructions d'installation
 
-IMPORTANT : Vous devez exécuter le script en utilisateur root !!
-Les permissions `root` sont nécessaire pour créer & installer `PhPmyAdmin` ainsi que `User & Database`.
+IMPORTANT : Vous devez exécuter le script en utilisateur `root` !
+Les permissions `root` sont nécessaire pour créer & installer `PhpMyAdmin`.
 
 1. Installation: `bash setup.sh`
 
