@@ -37,8 +37,6 @@ function check_install {
             print_info "[ $1 ] installé avec succès !"
             shift
         done
-    else
-        print_warn "[ $2 ] déjà installé !"
     fi
 }
 ############################################################
@@ -54,6 +52,9 @@ function print_warn {
     echo -n "$1"
     echo -e '\e[0m'
 }
+############################################################
+sudo chmod 777 setup.sh
+print_info "[ chmod 777 ] accordé avec succès !"
 ############################################################
 # Install Home
 ############################################################
@@ -101,6 +102,7 @@ function install_node {
     curl -sL https://deb.nodesource.com/setup_14.x | bash -
     check_install nodejs nodejs
     check_install npm npm
+    print_info "[ node & npm ] installé avec succès !"
 }
 ############################################################
 # Install Curl
@@ -108,6 +110,18 @@ function install_node {
 function install_gtop {
     npm i gtop -g
     print_info "[ gtop ] installé avec succès !"
+}
+############################################################
+## Install BashTop
+#############################################################
+function install_bashtop {
+    git clone https://github.com/aristocratos/bashtop.git
+    # shellcheck disable=SC2164
+    cd bashtop/
+    # shellcheck disable=SC2164
+    cd DEB
+    sudo ./build
+    print_info "[ bashtop ] installé avec succès !"
 }
 ############################################################
 # Install Unzip
@@ -172,9 +186,11 @@ function install_pm2 {
 function create_mariadb_user {
 PASSWDDB="$(openssl rand -base64 12)"
 MYIP=`hostname -I | awk '{print $1}'`
-MAINDB="${HOSTNAME//[^a-zA-Z0-9]/_}_user"
+MAINDB="${HOSTNAME//[^a-zA-Z0-9]/_}"
 
 mysqladmin -u root password "$PASSWDDB"
+# shellcheck disable=SC2086
+mysql -uroot -p$PASSWDDB -e "CREATE DATABASE ${MAINDB} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 # shellcheck disable=SC2086
 mysql -uroot -p$PASSWDDB -e "CREATE USER $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
 # shellcheck disable=SC2086
@@ -239,18 +255,18 @@ function install_apache_home {
 # Install Sudo
 ############################################################
 function install_sudo {
-    apt install sudo
+    check_install sudo sudo
     print_info "[ sudo ] installé avec succès !"
 }
 ############################################################
 # Install Mongoose
 ############################################################
 function install_mongoose {
-    sudo apt-get install gnupg
+    check_install gnupg gnupg
     wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
     echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | sudo tee
     /etc/apt/sources.list.d/mongodb-org-4.4.list
-    sudo apt-get update
+    apt-get -q -y update
     sudo apt-get install -y mongodb-org
     sudo systemctl start mongod
     print_info "[ mongoose ] installé avec succès !"
@@ -307,6 +323,7 @@ function install_phpmyadmin {
     </IfModule>
     '  > /etc/apache2/ports.conf
     sudo a2ensite phpmyadmin.conf
+    print_info "[ PhpMyAdmin ] installé avec succès !"
 }
 ############################################################
 # Restart Apache
@@ -325,15 +342,6 @@ function restart_mysql {
 ############################################################
 # Fix locale language
 ############################################################
-#function fix_locale {
-#    cp /etc/locale.gen /etc/locale.gen.old
-#    sed -i "s/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/g" /etc/locale.gen
-    #sed -i "s/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/g" /etc/locale.gen
-    #sed -i "s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g" /etc/locale.gen
-#    /usr/sbin/locale-gen
-#    export LANG=fr_FR.UTF-8
-#}
-
 function fix_locale {
 localectl set-locale fr_FR.UTF-8
 print_info "[ language FR ] initialisé avec succès !"
@@ -342,8 +350,10 @@ print_info "[ language FR ] initialisé avec succès !"
 # apt_clean
 ############################################################
 function apt_clean {
-    apt-get -q -y autoclean
     apt-get -q -y clean
+    apt-get -q -y autoclean
+    apt-get -q -y autoremove
+    print_info "[ clean ] effectué avec succès !"
 }
 ############################################################
 # update_upgrade
@@ -358,13 +368,13 @@ function update_upgrade {
 ############################################################
 function update {
     apt-get -q -y update
+    print_info "[ update ] effectué avec succès !"
 }
 ############################################################
 # START OF PROGRAM
 ############################################################
 case "$1" in
 *)
-    #update_upgrade
     update
     install_home
     install_sudo
@@ -374,6 +384,7 @@ case "$1" in
     install_node
     install_pm2
     install_gtop
+    install_bashtop
     install_git
     install_curl
     install_unzip
@@ -389,8 +400,7 @@ case "$1" in
     restart_mysql
     restart_apache
     fix_locale
+    apt_clean
     create_mariadb_user
-
-    #apt_clean
     ;;
 esac
