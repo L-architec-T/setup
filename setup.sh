@@ -78,7 +78,13 @@ print_info "[ motd ] installé avec succès !"
 # Install build-essential
 ############################################################
 function install_dos2unix {
-    sudo apt-get install dos2unix
+    check_install dos2unix dos2unix
+} 
+############################################################
+# Install fail2ban
+############################################################
+function install_fail2ban {
+    check_install fail2ban fail2ban
 }
 ############################################################
 # Install proxy_http
