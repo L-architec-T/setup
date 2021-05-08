@@ -397,11 +397,9 @@ case "$1" in
     install_pm2
     install_gtop
     install_bashtop
-    install_nodemon
     install_git
     install_ffmpeg
     install_speedtest
-    install_proxy_http
     install_apache
     install_apache_home
     install_mariadb_server
@@ -409,6 +407,7 @@ case "$1" in
     install_mysql
     install_php
     install_phpmyadmin
+    install_proxy_http
     restart_mysql
     restart_apache
     fix_locale
