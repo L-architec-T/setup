@@ -78,13 +78,7 @@ print_info "[ motd ] installé avec succès !"
 # Install build-essential
 ############################################################
 function install_dos2unix {
-    check_install dos2unix dos2unix
-} 
-############################################################
-# Install fail2ban
-############################################################
-function install_fail2ban {
-    check_install fail2ban fail2ban
+    sudo apt-get install dos2unix
 }
 ############################################################
 # Install proxy_http
@@ -128,6 +122,13 @@ function install_gtop {
     print_info "[ gtop ] installé avec succès !"
 }
 ############################################################
+# Install nodemon
+############################################################
+function install_nodemon {
+    npm i nodemon -g
+    print_info "[ nodemon ] installé avec succès !"
+}
+############################################################
 ## Install BashTop
 #############################################################
 function install_bashtop {
@@ -150,7 +151,7 @@ function install_apache {
     check_install apache2 apache2
 }
 ############################################################
-# Install Apache
+# Install ffmpeg
 ############################################################
 function install_ffmpeg {
     check_install ffmpeg ffmpeg
@@ -396,6 +397,7 @@ case "$1" in
     install_pm2
     install_gtop
     install_bashtop
+    install_nodemon
     install_git
     install_ffmpeg
     install_speedtest
