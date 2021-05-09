@@ -21,7 +21,7 @@
     <a href="https://github.com/L-architec-T/setup/issues">Request Feature</a>
 </h3>
 
-## ⚙️ Getting Started
+## ⚙️ Commencer
 
 1. Mise à jour : `apt update`
 2. Install Git : `apt install git`
@@ -33,6 +33,16 @@
 Les permissions `root` sont nécessaire pour créer & installer `PhpMyAdmin`.
 
 1. Installation: `bash setup.sh`
+
+## 🛠 Que fait-il ?
+
+Il installera et configura automatiquement et rapidement une collection de modules nécessaire pour votre SD/VPS :
+
+`Apache`, `Mysql`, `PhpMyAdmin`, `Php`, `Nodejs`, `Ffmpeg`, `Git`, `Curl`, `Unzip`, `Dos2unix`, `Mongoose`, `Pm2`, `Htop`, `Gtop`, `Bashtop`, `Speedtest`, `Proxy_Http`, `Fail2Ban`...
+
+Il créera automatiquement (User & Db) et enverra les accès PhpMyAdmin dans votre dossier racine (setup) à la fin de la configuration.
+
+Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour installer vos modules, il s'occupe de tous en moins de 5 minutes 👌
 
 ### Montrez votre soutien
 
