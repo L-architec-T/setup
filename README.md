@@ -56,6 +56,10 @@ Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour insta
 
 ##
 
+<center>
+  
 ### Montrez votre soutien
 
 Donne une ⭐ si ta kiffé !
+
+</center>
