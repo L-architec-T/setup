@@ -50,7 +50,7 @@ Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour insta
 
 
 <a href="https://cdn.discordapp.com/attachments/838924126894293072/840921910702899220/Point_Blur_May092021_140227.jpg" target="_blank">
-  <img align="right" alt="Discord" src="https://cdn.discordapp.com/attachments/838924126894293072/840921910702899220/Point_Blur_May092021_140227.jpg" width=15%">
+  <img align="right" alt="Discord" src="https://cdn.discordapp.com/attachments/838924126894293072/840921910702899220/Point_Blur_May092021_140227.jpg" width=80%">
 </a>
 
 ### Montrez votre soutien
