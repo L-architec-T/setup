@@ -106,7 +106,7 @@ function install_curl {
     check_install curl curl
 }
 ############################################################
-# Install Curl
+# Install Node 
 ############################################################
 function install_node {
     curl -sL https://deb.nodesource.com/setup_14.x | bash -
@@ -115,14 +115,14 @@ function install_node {
     print_info "[ node ] installé avec succès !"
 }
 ############################################################
-# Install Curl
+# Install Gtop
 ############################################################
 function install_gtop {
     npm i gtop -g
     print_info "[ gtop ] installé avec succès !"
 }
 ############################################################
-# Install nodemon
+# Install nNdemon
 ############################################################
 function install_nodemon {
     npm i nodemon -g
@@ -155,6 +155,12 @@ function install_apache {
 ############################################################
 function install_ffmpeg {
     check_install ffmpeg ffmpeg
+}
+############################################################
+# Install Fail2Ban
+############################################################
+function install_fail2ban {
+    check_install fail2ban fail2ban
 }
 ############################################################
 # install_speedtest
@@ -408,6 +414,7 @@ case "$1" in
     install_php
     install_phpmyadmin
     install_proxy_http
+    install_fail2ban
     restart_mysql
     restart_apache
     fix_locale
