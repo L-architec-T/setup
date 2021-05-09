@@ -5,15 +5,16 @@
 
 <br/>
 
-<img href="https://discord.gg/XG7FMpcxRA" align="right" width="15%" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge"> 
-  
-![GitHub Repo stars](https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub Repo stars](https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
-[![Support Server](https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/XG7FMpcxRA)
+<a href="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge">
+  <img align="right" alt="Discord" src="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
+</a>
 
 <a href="https://discord.gg/XG7FMpcxRA">
-         <img align="right" alt="Discord" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge"
-         width=15%">
+  <img align="right" alt="Discord" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" width=15%">
+</a>
+
+<a href="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge">
+  <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
 
 <h3 align="center">
