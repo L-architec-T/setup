@@ -14,7 +14,7 @@
 </a>
 
 <a href="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge">
-  <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
+  <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=20%">
 </a>
                                                                                                                                                     
 <br></br>
