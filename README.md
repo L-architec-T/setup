@@ -5,7 +5,7 @@
 
 <br/>
 
-<center>
+
 <a href="https://github.com/L-architec-T/setup/stargazers" target="_blank">
   <img align="left" alt="Discord" src="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
@@ -13,7 +13,7 @@
 <a href="https://github.com/L-architec-T/setup/network" target="_blank">
   <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
-</center>    
+ 
                                                                                                                                                      
 <br></br>
 
@@ -48,7 +48,9 @@ Il créera automatiquement (User & Db) et enverra les accès PhpMyAdmin dans vot
 
 Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour installer vos modules, il s'occupe de tous en moins de 5 minutes 👌
 
-<img align="center" alt="Discord" src="https://cdn.discordapp.com/attachments/838924126894293072/840921910702899220/Point_Blur_May092021_140227.jp" width=50%">
+
+<img align="center" alt="Discord" src="https://cdn.discordapp.com/attachments/838924126894293072/840921910702899220/Point_Blur_May092021_140227.jpg" width=50%">
+
 
 ### Montrez votre soutien
 
