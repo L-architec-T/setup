@@ -48,10 +48,13 @@ Il créera automatiquement (User & Db) et enverra les accès PhpMyAdmin dans vot
 
 Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour installer vos modules, il s'occupe de tous en moins de 5 minutes 👌
 
+<center>
 
 <a href="https://cdn.discordapp.com/attachments/838924126894293072/840921910702899220/Point_Blur_May092021_140227.jpg" target="_blank">
   <img align="center" alt="Discord" src="https://cdn.discordapp.com/attachments/838924126894293072/840921910702899220/Point_Blur_May092021_140227.jpg" width=80%">
 </a>
+
+</center>
 
 ### Montrez votre soutien
 
