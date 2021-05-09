@@ -60,5 +60,5 @@ Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour insta
   Montre ton soutien
 
 <br/>
-  <a href="larchitect.cf" style="font-size: 5px;">Donne une ⭐ si ta kiffé !</a>
+  <a href="https://github.com/L-architec-T/setup/stargazers" style="font-size: 5px;">Donne une ⭐ si ta kiffé !</a>
 </h2>
