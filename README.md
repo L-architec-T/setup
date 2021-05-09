@@ -10,11 +10,11 @@
 </a>
 
 <a href="https://discord.gg/XG7FMpcxRA">
-  <img align="center" alt="Discord" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" width=20%">
+  <img align="center" alt="Discord" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" width=25%">
 </a>
 
 <a href="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge">
-  <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=20%">
+  <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
                                                                                                                                                     
 <br></br>
