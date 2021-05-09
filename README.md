@@ -21,7 +21,7 @@
     <a href="https://github.com/L-architec-T/setup/issues">Request Feature</a>
 </h3>
 
-## ⚙️ Commencer
+## ⚙️ Prérequis
 
 1. Mise à jour : `apt update`
 2. Install Git : `apt install git`
@@ -44,6 +44,6 @@ Il créera automatiquement (User & Db) et enverra les accès PhpMyAdmin dans vot
 
 Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour installer vos modules, il s'occupe de tous en moins de 5 minutes 👌
 
-## Montrez votre soutien
+### Montrez votre soutien
 
 Donne une ⭐ si ta kiffé !
