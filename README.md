@@ -56,10 +56,9 @@ Vous ne perdrez plus de temps a taper 50 commandes pendant des heures pour insta
 
 ##
 
-<center>
-  
-### Montrez votre soutien
+<h2 align="center">
+  ### Montrez votre soutien
 
-Donne une ⭐ si ta kiffé !
-
-</center>
+<br/>
+  <a href="larchitect.cf" style="font-size: 5px;">Donne une ⭐ si ta kiffé !</a>
+</h2>
