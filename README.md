@@ -5,6 +5,7 @@
 
 <br/>
 
+<center>
 <a href="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge">
   <img align="center" alt="Discord" src="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
@@ -12,7 +13,8 @@
 <a href="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge">
   <img align="center" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
-                                                                                                                                                    
+</center>    
+                                                                                                                                                     
 <br></br>
 
 <h3 align="center">
