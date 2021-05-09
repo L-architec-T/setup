@@ -6,11 +6,11 @@
 <br/>
 
 <center>
-<a href="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" target="_blink">
+<a href="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" target="_blank">
   <img align="left" alt="Discord" src="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
 
-<a href="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" target="_blink">
+<a href="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" target="_blank">
   <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
 </center>    
