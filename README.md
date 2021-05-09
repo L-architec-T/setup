@@ -9,9 +9,9 @@
   <img align="left" alt="Discord" src="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
 
-<p align="center" width="100%">
-    <img width="23%" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge"> 
-</p>
+<a href="https://discord.gg/XG7FMpcxRA">
+  <img align="center" alt="Discord" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=margin-left:22%" width=20%">
+</a>
 
 <a href="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge">
   <img align="right" alt="Discord" src="https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
