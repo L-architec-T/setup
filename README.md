@@ -9,7 +9,7 @@
   <img align="left" alt="Discord" src="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
 
-<a href="https://discord.gg/XG7FMpcxRA">
+<a href="https://discord.gg/XG7FMpcxRA" style="margin-left:23%;">
   <img style="margin-left:23%;" alt="Discord" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge" width=20%">
 </a>
 
