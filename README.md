@@ -11,7 +11,7 @@
                                                                                                                                                    
 <h3 align="center">
     🔹
-    <a href="https://github.com/L-architec-T/setup/issues">Report Bug</a> &nbsp; &nbsp;
+    <a href="https://github.com/L-architec-T/setup/issues">Report Bug</a>
     🔹
     <a href="https://github.com/L-architec-T/setup/issues">Request Feature</a>
 </h3>
