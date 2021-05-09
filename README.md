@@ -6,7 +6,7 @@
 <br/>
 
 <center>
-<a href="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" target="_blank">
+<a href="https://github.com/L-architec-T/setup/stargazers" target="_blank">
   <img align="left" alt="Discord" src="https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge" width=15%">
 </a>
 
