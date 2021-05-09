@@ -5,7 +5,7 @@
 
 <br/>
 
-<img align="right" width="10%" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/XG7FMpcxRA"> 
+<img href="https://discord.gg/XG7FMpcxRA" align="right" width="15%" src="https://img.shields.io/discord/591914197219016707.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge"> 
   
 ![GitHub Repo stars](https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
 ![GitHub Repo stars](https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
