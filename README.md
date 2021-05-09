@@ -5,7 +5,7 @@
 
 <br/>
 
-<center>
+<p align="center"> 
   
 ![GitHub Repo stars](https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
 ![GitHub Repo stars](https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
