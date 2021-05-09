@@ -8,7 +8,7 @@
 <center>
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
-![GitHub forks](https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge)
+[![GitHub forks](https://img.shields.io/github/forks/L-architec-T/StrapDown.js.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/L-architec-T/StrapDown.js/network/)
 [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
 
 </center>
