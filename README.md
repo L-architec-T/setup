@@ -5,7 +5,7 @@
 
 <br/>
 
-<p align="center"> 
+<img align="right" width="33%" src="https://i.stack.imgur.com/RJj4x.png"> 
   
 ![GitHub Repo stars](https://img.shields.io/github/stars/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
 ![GitHub Repo stars](https://img.shields.io/github/forks/L-architec-T/setup?color=red&logo=github&style=for-the-badge) &nbsp;
