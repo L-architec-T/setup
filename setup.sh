@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [ "$(whoami)" != 'root' ]
-  then
-    echo "Veuillez executer en root !!"
-    exit
-fi
 ############################################################
 # Script Auto-Setup By LarchitecT
 ############################################################
@@ -28,6 +23,12 @@ echo "
 "
 ############################################################
 # core functions
+############################################################
+if [ "$(whoami)" != 'root' ]
+  then
+    echo "Veuillez executer en root !!"
+    exit
+fi
 ############################################################
 function check_install {
     if [ -z "$(which "$1" 2>/dev/null)" ]
