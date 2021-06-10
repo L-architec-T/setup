@@ -173,7 +173,7 @@ function install_speedtest {
     export INSTALL_KEY=379CE192D401AB61
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
     echo "deb https://ookla.bintray.com/debian generic main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
-    sudo apt-get update
+    sudo apt-get update -y
     check_install speedtest speedtest
 }
 ############################################################
@@ -204,6 +204,7 @@ function install_pm2 {
 ############################################################
 # Install create_mariadb_user
 ############################################################
+# shellcheck disable=SC2120
 function create_mariadb_user {
 PASSWDDB="$(openssl rand -base64 12)"
 MYIP="$(hostname -I | awk '{print $1}')"
@@ -213,9 +214,23 @@ mysqladmin -u root password "$PASSWDDB"
 
 mysql -uroot -p"$PASSWDDB" -e "CREATE DATABASE ${MAINDB} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 mysql -uroot -p"$PASSWDDB" -e "CREATE USER $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
-mysql -uroot -p"$PASSWDDB" -e "GRANT ALL PRIVILEGES ON $MAINDB.* TO $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
+# mysql -uroot -p"$PASSWDDB" -e "GRANT ALL PRIVILEGES ON $MAINDB.* TO $MAINDB@localhost IDENTIFIED BY '$PASSWDDB';"
+mysql -uroot -p"$PASSWDDB" -e "GRANT ALL PRIVILEGES ON *.* TO $MAINDB@localhost WITH GRANT OPTION;"
 mysql -uroot -p"$PASSWDDB" -e "FLUSH PRIVILEGES;"
 mysql -uroot -p"$PASSWDDB" -e "QUIT"
+
+echo "
+<?php
+\$cfg['blowfish_secret'] = 'GGlkGmgpsp]9_[b2lXr5*a\$BV4XO1lm+guJU3k(p$9z^9';
+\$i = 0;
+\$i++;
+\$cfg['Servers'][\$i]['auth_type'] = 'cookie';
+\$cfg['Servers'][\$i]['host'] = 'localhost';
+\$cfg['Servers'][\$i]['compress'] = false;
+\$cfg['Servers'][\$i]['AllowNoPassword'] = false;
+\$cfg['UploadDir'] = '';
+\$cfg['SaveDir'] = '';
+" > /opt/phpMyAdmin/config.inc.php
 
 /etc/init.d/mysql stop
 /etc/init.d/mysql start
