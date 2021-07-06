@@ -29,6 +29,7 @@
 1. Mise à jour : `apt update`
 2. Install Git : `apt install git`
 3. Clone ce référentiel : `git clone https://github.com/L-architec-T/setup.git`
+4. Permissions : `chmod 777 ./setup.sh`
 
 ## 🛠 Instructions d'installation
 
