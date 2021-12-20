@@ -64,14 +64,14 @@ function print_warn {
 ############################################################
 function install_home {
     echo  '
-____  ___         ________  _______________   ____
-\   \/  /         \______ \ \_   _____/\   \ /   /
- \     /   ______  |    |  \ |    __)_  \   Y   /
- /     \  /_____/  |    `   \|        \  \     /
-/___/\  \         /_______  /_______  /   \___/
-      \_/                 \/        \/          By LarchitecT
+.____                         .__    .__  __              ___________
+|    |   _____ _______   ____ |  |__ |__|/  |_  ____   ___\__    ___/
+|    |   \__  \\_  __ \_/ ___\|  |  \|  \   __\/ __ \_/ ___\|    |
+|    |___ / __ \|  | \/\  \___|   Y  \  ||  | \  ___/\  \___|    |
+|_______ (____  /__|    \___  >___|  /__||__|  \___  >\___  >____|
+        \/    \/            \/     \/              \/     \/
 
-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 '  > /etc/motd
 print_info "[ motd ] installé avec succès !"
 }
@@ -99,6 +99,12 @@ function install_build {
 ############################################################
 function install_git {
     check_install git git
+}
+############################################################
+# Install Neofetch
+############################################################
+function install_neofetch {
+    check_install neofetch neofetch
 }
 ############################################################
 # Install Curl
@@ -167,20 +173,20 @@ function install_fail2ban {
 # install_speedtest
 ############################################################
 function install_speedtest {
-    check_install gnupg1 gnupg1
-    check_install apt-transport-https apt-transport-https
-    check_install dirmngr dirmngr
-    export INSTALL_KEY=379CE192D401AB61
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
-    echo "deb https://ookla.bintray.com/debian generic main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
-    sudo apt-get update -y
-    check_install speedtest speedtest
+    check_install speedtest-cli speedtest-cli
 }
 ############################################################
 # install_mariadb_server
 ############################################################
 function install_mariadb_server {
     check_install mariadb-server mariadb-server
+}
+############################################################
+# install_mariadb_server
+############################################################
+function install_nvm {
+    curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh
+    print_info "[ nvm ] installé avec succès !"
 }
 ############################################################
 # install_mariadb_client
@@ -410,12 +416,14 @@ case "$1" in
     update
     install_home
     install_sudo
+    install_neofetch
     install_curl
     install_unzip
     install_dos2unix
     install_mongoose
     install_build
     install_node
+    install_nvm
     install_pm2
     install_gtop
     install_bashtop
